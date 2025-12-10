@@ -3,6 +3,25 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.141.0
+    created: "2025-12-10T12:03:46.2769133Z"
+    description: OpenTelemetry Collector Helm chart for Kubernetes
+    digest: 2328fc8ddcfe382ffdf08da59d319913e518b7b4ff1a43f001d3c4a021293536
+    home: https://opentelemetry.io/
+    icon: https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png
+    maintainers:
+    - name: dmitryax
+    - name: jaronoff97
+    - name: TylerHelmuth
+    name: opentelemetry-collector
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-collector
+    - https://github.com/open-telemetry/opentelemetry-collector-contrib
+    type: application
+    urls:
+    - https://github.com/thejoeejoee/opentelemetry-helm-charts/releases/download/opentelemetry-collector-0.141.1/opentelemetry-collector-0.141.1.tgz
+    version: 0.141.1
+  - apiVersion: v2
+    appVersion: 0.141.0
     created: "2025-12-08T19:38:12.025216348Z"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: 5b0ef1fa039ebb71c82fda2592882c9d2764d3b1dc35903c2afce60c34af27b5
@@ -11779,6 +11798,47 @@ entries:
   opentelemetry-kube-stack:
   - apiVersion: v2
     appVersion: 0.138.0
+    created: "2025-12-10T12:03:46.434796753Z"
+    dependencies:
+    - condition: crds.install,crds.installOtel
+      name: otel-crds
+      repository: ""
+      version: 0.0.0
+    - condition: crds.install,crds.installPrometheus
+      name: prometheus-crds
+      repository: ""
+      version: 0.0.0
+    - condition: opentelemetry-operator.enabled
+      name: opentelemetry-operator
+      repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+      version: 0.99.0
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 6.3.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.48.*
+    description: 'OpenTelemetry Quickstart chart for Kubernetes. Installs an operator
+      and collector for an easy way to get started with Kubernetes observability. '
+    digest: 48fc0c305c1db47cfa7354f2e88bfdd411c61ff8f3227fe8ad93a37679c690f7
+    home: https://opentelemetry.io/
+    icon: https://raw.githubusercontent.com/cncf/artwork/a718fa97fffec1b9fd14147682e9e3ac0c8817cb/projects/opentelemetry/icon/color/opentelemetry-icon-color.png
+    maintainers:
+    - name: Allex1
+    - name: dmitryax
+    - name: jaronoff97
+    - name: TylerHelmuth
+    name: opentelemetry-kube-stack
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-operator
+    type: application
+    urls:
+    - https://github.com/thejoeejoee/opentelemetry-helm-charts/releases/download/opentelemetry-kube-stack-0.12.6/opentelemetry-kube-stack-0.12.6.tgz
+    version: 0.12.6
+  - apiVersion: v2
+    appVersion: 0.138.0
     created: "2025-12-08T19:38:12.207574136Z"
     dependencies:
     - condition: crds.install,crds.installOtel
@@ -19575,4 +19635,4 @@ entries:
     urls:
     - https://github.com/open-telemetry/opentelemetry-helm-charts/releases/download/opentelemetry-target-allocator-0.0.1/opentelemetry-target-allocator-0.0.1.tgz
     version: 0.0.1
-generated: "2025-12-08T19:38:12.208817209Z"
+generated: "2025-12-10T12:03:46.436102156Z"
